@@ -1,0 +1,24 @@
+{
+  "session": {
+    "sessionId": "SessionId.9c5371aa-4b81-4810-b488-b4a83226a646",
+    "application": {
+      "applicationId": "amzn1.ask.skill.7314a604-a016-4d25-be3f-70447278c95d"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AF5LH4MBKILABA3WOTZA35OAIYD3NC3DYM3X64XJILWCYCSQ5IEDQYNKWSUQ7QGM4IM5TO3FQOUZQFSJZZMA2PZ37OBK4IRIN3CO5S53TXPGGBYN7OWFGRDRBESWJIU7NVWCQHECCJAJTODZHIMKZC445OCSXXV5RX3VB67HKNVTVWAL7CCRBMRS5ZBLRA3WF2F5FRIEEOA5XRA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.079b0a50-08ae-4d42-86f1-d8cbf09949c8",
+    "locale": "en-GB",
+    "timestamp": "2017-04-03T18:22:36Z",
+    "intent": {
+      "name": "CountBrainDatesIntent",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

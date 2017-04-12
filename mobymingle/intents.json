@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "CountBrainDatesIntent"
+    },
+    {
+      "intent": "FindPopularKeywordIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
