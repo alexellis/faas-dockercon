@@ -21,7 +21,7 @@ const findPopularKeywordIntent = "FindPopularKeywordIntent"
 
 const countBrainDatesIntent = "CountBrainDatesIntent"
 
-const AmazonHelp = "AMAZON.HelpInten"
+const AmazonHelp = "AMAZON.HelpIntent"
 
 func buildOutput(intent *AlexaIntent) string {
 	var speech string
