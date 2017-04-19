@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "response": {
+    "outputSpeech": {
+      "type": "PlainText",
+      "text": "Let's find out the cost of your payroll."
+    },
+    "shouldEndSession": false
+  },
+  "sessionAttributes": {
+    "pinGiven": false,
+    "lastIntent": ""
+  }
+}

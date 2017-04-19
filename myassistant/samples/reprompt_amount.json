@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "response": {
+    "outputSpeech": {
+      "type": "PlainText",
+      "text": "Pay Gordon how much bonus?"
+    },
+    "shouldEndSession": false
+  },
+  "sessionAttributes": {
+    "payee": "Gordon",
+    "pinGiven": false,
+    "lastIntent": "AddBonusName"
+  }
+}

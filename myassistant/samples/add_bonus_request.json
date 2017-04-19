@@ -1,0 +1,32 @@
+{
+  "session": {
+    "sessionId": "SessionId.5d307366-7fcf-41eb-b67a-117afbe9bac8",
+    "application": {
+      "applicationId": "amzn1.ask.skill.4071f7ac-b10c-4cf7-8e18-2b5b5c5caa90"
+    },
+    "attributes": {
+      "lastIntent": "AddBonusName",
+      "payee": "Gordon"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AHJVQNXNIOUWONMN65VP75U2TAJG5A22CYIAUT7LYXZS24RLYBFOBT6UFWEI5TTM36RY3DAS7XLK46JECLY7CADLTVQDUW5QKUT64FAVK56PRPWIDPPDSFFTCMKBHJWGISMDHPEBOZ2V35CXHSR2VKGPWVDMHYAXXC6IE22FKQWSQW4BT4GFLNSVAHJUZ3BPXWFOTIL536PJTWQ"
+    },
+    "new": false
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.46c2d2d9-60e4-4e0c-afaf-bd55c56f47bf",
+    "locale": "en-GB",
+    "timestamp": "2017-03-22T19:29:24Z",
+    "intent": {
+      "name": "AddBonusAmount",
+      "slots": {
+        "amount": {
+          "name": "amount",
+          "value": "500"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
