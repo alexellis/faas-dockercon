@@ -27,7 +27,7 @@ func buildOutput(intent *AlexaIntent) string {
 	var speech string
 	if intent.Name == findPopularKeywordIntent {
 		keywords := getKeywords()
-		speech = "The most popular keywords were: " + strings.Join(keywords, " , ")
+		speech = "The most popular keywords were: " + strings.Join(keywords, " and ")
 	} else if intent.Name == countBrainDatesIntent {
 		brainDates := getBraindates()
 		speech = fmt.Sprintf("We've had a total of %d mingles so far", brainDates)
