@@ -1,0 +1,6 @@
+CountBrainDatesIntent how many mingles have we had
+CountBrainDatesIntent how many mingles we had
+CountBrainDatesIntent how many mingles we had at dockercon
+CountBrainDatesIntent how many mingles were there
+FindPopularKeywordIntent what was the most popular keyword
+FindPopularKeywordIntent what was popular at dockercon
