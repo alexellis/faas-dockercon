@@ -1,0 +1,28 @@
+{
+  "intents": [
+    {
+      "intent": "CheckCost"
+    },
+    {
+      "intent": "ClearBonusAmount"
+    },
+    {
+      "slots": [
+        {
+          "name": "name",
+          "type": "AMAZON.GB_FIRST_NAME"
+        }
+      ],
+      "intent": "AddBonusName"
+    },
+    {
+      "slots": [
+        {
+          "name": "amount",
+          "type": "AMAZON.FOUR_DIGIT_NUMBER"
+        }
+      ],
+      "intent": "AddBonusAmount"
+    }
+  ]
+}

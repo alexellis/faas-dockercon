@@ -1,3 +1,6 @@
 CheckCost how much funds I need for payroll
+CheckCost how much my payroll will cost
+ClearBonusAmount reset
+AddBonusName give a bonus to {name}
 AddBonusName award a bonus to {name}
 AddBonusAmount {amount} dollars
