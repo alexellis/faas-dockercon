@@ -87,7 +87,7 @@ module.exports = (req, callback) => {
 
                 callback(null, res);
             } else {
-                res.response.outputSpeech.text = "Pay " + payee + " how much bonus?";
+                res.response.outputSpeech.text = "Pay them how much bonus?";
                 res.sessionAttributes["lastIntent"] = intentName;
 
                 res.sessionAttributes["payee"] = payee;
