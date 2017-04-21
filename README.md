@@ -6,6 +6,8 @@ These are the functions I demoed in order. For the video checkout the Docker blo
 
 [Dockercon 2017: Moby's cool hack session](https://blog.docker.com/2017/04/dockercon-2017-mobys-cool-hack-sessions/)
 
+> ## Get started with FaaS here [alexellis/faas](https://github.com/alexellis/faas/)
+
 ### Functions
 
 * Fanclub	
