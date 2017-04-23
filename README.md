@@ -12,11 +12,13 @@ These are the functions I demoed in order. For the video checkout the Docker blo
 
 * Fanclub	
 
-Received Github event and called into GetAvatar before storing the image in Minio
+Received Github event and called into GetAvatar before storing the image as an object in Minio.
+
+Images were stored in a long-running Minio object storage server in an S3 bucket. Minio is easy to self-host and compatible with the S3 API making it a good choice for my FaaS demo. During the keynote demo I mirrored the S3 bucket containing the avatars over to my desktop so you could see peoples faces appearing as soon as they clicked "Star" on the Github repository.
 
 * GetAvatar
 
-Downloads avatar of user in a Github event
+Downloads avatar of user in a Github event - taking JSON as input. Written in Python.
 
 * mobymingle
 
@@ -26,10 +28,13 @@ Integration with the E-180 data-stream behind the MobyMingle (Golang)
 
 Alexa skill for interacting with object storage and payroll engine
 
+> I used a thin abstraction on the top of Minio called [minio-db](https://github.com/alexellis/minio-db) to allow me to store JSON data in a similar way to a document store - think of a much more primitive version of DynamoDB or Mongo.
+
 * Payroll
 
 Payroll engine responsible for adding base salary together with bonus override amount
 
+This was presented by a bonus.json file in Minio and a hard-coded dataset in the payroll function.
 
 The fanclub function scaling when hundreds of people all added a Github star to my repository at once:
 
