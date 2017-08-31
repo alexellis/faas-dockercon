@@ -1,0 +1,14 @@
+provider:
+  name: faas
+  gateway: http://localhost:8081
+
+functions:
+  get-avatar:
+    lang: python
+    handler: ./GetAvatar
+    image: alexellis/faas-get-avatar:0.2
+
+  fanclub:
+    lang: python
+    handler: ./Fanclub
+    image: alexellis/faas-fanclub:0.2

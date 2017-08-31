@@ -2,22 +2,12 @@ import requests
 import json
 import base64
 
-import sys
-
-def get_stdin():
-    buf = ""
-    for line in sys.stdin:
-        buf = buf + line
-    return buf
-
-if(__name__=="__main__"):
-    st = get_stdin()
-
+def handle(st):
     # parse Github event
     req = json.loads(st)
 
     # download the avatar binary using getavatar function
-    r = requests.post("http://gateway:8080/function/func_getavatar", json=req)
+    r = requests.post("http://gateway:8080/function/get-avatar", json=req)
 
     res = r.json()
 
@@ -31,8 +21,12 @@ if(__name__=="__main__"):
     loginName = req["sender"]["login"]
     
     # Store in the fan-club photo gallery
-    r1 = requests.post("http://minio-db:8080/put-blob/"+ loginName + ext, data=imageData)
+    r1 = requests.post("http://minio-shim:8080/put-blob/"+ loginName + ext, data=imageData)
 
-    # Useful for logging, Github will receive this string.
-    print('{"status": "success", "username": "' + req["sender"]["login"] + '", "bytes": "'+str(len(imageData))+'"}')
+    club_res = {}
+    club_res["status"] = "success"
+    club_res["username"] = req["sender"]["login"]
+    club_res["bytes"] = len(imageData)
 
+    # Useful for logging, GitHub's invoker will receive this string
+    print(json.dumps(club_res))
