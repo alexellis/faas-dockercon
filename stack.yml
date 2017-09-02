@@ -1,6 +1,7 @@
 provider:
   name: faas
-  gateway: http://localhost:8081
+  gateway: http://faas.ae24.space:8080
+  # gateway: http://localhost:8081
 
 functions:
   get-avatar:
@@ -12,3 +13,13 @@ functions:
     lang: python
     handler: ./Fanclub
     image: alexellis/faas-fanclub:0.2
+
+  myassistant:
+    lang: node
+    handler: ./myassistant
+    image: alexellis/faas-myassistant:0.2
+
+  payroll:
+    lang: node
+    handler: ./payroll
+    image: alexellis/faas-payroll:0.2

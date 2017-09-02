@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "dependencies": {
-        "get-stdin": "^5.0.1",
         "minio-db-client": "^1.0.0"
     },
     "main": "index.js",

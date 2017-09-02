@@ -4,7 +4,8 @@ const fs = require('fs');
 const request = require('request');
 const MinioClient = require('minio-db-client');
 
-module.exports = (req, callback) => {
+module.exports = (reqIn, callback) => {
+    let req = JSON.parse(reqIn);
     if (req.request.type == "SessionEndedRequest") {
         fs.readFile("./samples/response.json", "utf8", (err, val) => {
             let res = JSON.parse(val);

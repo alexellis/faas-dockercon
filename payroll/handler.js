@@ -1,21 +1,10 @@
 "use strict"
 
-const getStdin = require('get-stdin')
 const MinioClient = require('minio-db-client');
 
-var state = {};
-getStdin().then(std => {
-    state.rawInput = std;
-    var objectData = JSON.parse(std);
-    state.input = objectData;
-    handle(objectData, (err, val) => {
-        console.log(JSON.stringify(val));
-    });
-}).catch(err => {
-    console.log(err.stack, state.rawInput);
-})
-
-let handle = (req, callback) => {
+let handle = (reqIn, callback) => {
+    let req = JSON.parse(reqIn);
+    
     var err = null;
 
     let objectStorage = new MinioClient("http://minio-db:8080");
@@ -31,3 +20,5 @@ let handle = (req, callback) => {
         });
     });
 };
+
+module.exports = handle;

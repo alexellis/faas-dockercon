@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "get-stdin": "^5.0.1",
     "minio-db-client": "^1.0.0",
     "request": "^2.81.0"
   },
