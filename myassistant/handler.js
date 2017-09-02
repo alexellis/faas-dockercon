@@ -7,7 +7,7 @@ const MinioClient = require('minio-db-client');
 module.exports = (reqIn, callback) => {
     let req = JSON.parse(reqIn);
     if (req.request.type == "SessionEndedRequest") {
-        fs.readFile("./samples/response.json", "utf8", (err, val) => {
+        fs.readFile("./function/samples/response.json", "utf8", (err, val) => {
             let res = JSON.parse(val);
 
             return callback(null, {});
@@ -17,12 +17,16 @@ module.exports = (reqIn, callback) => {
     let intentName = req.request.intent.name;
 
     if (intentName == "CheckCost") {
-        fs.readFile("./samples/response.json", "utf8", (err, val) => {
+        fs.readFile("./function/samples/response.json", "utf8", (err, val) => {
+            if(err != null) {
+                return callback(err, null);
+            }
+
             let res = JSON.parse(val);
 
             let calcReq = {
                 json: true,
-                uri: "http://gateway:8080/function/func_payroll",
+                uri: "http://gateway:8080/function/payroll",
                 json: true,
                 body: {}
             };
@@ -38,7 +42,7 @@ module.exports = (reqIn, callback) => {
             });
         });
     } else if (intentName == "ClearBonusAmount") {
-        fs.readFile("./samples/response.json", "utf8", (err, val) => {
+        fs.readFile("./function/samples/response.json", "utf8", (err, val) => {
             let res = JSON.parse(val);
 
             let amount = "0";
@@ -46,7 +50,7 @@ module.exports = (reqIn, callback) => {
             res.response.outputSpeech.text = "I'll do that for you now";
 
             let bonusAmount = parseInt(amount);
-            let objectStorage = new MinioClient("http://minio-db:8080");
+            let objectStorage = new MinioClient("http://minio-shim:8080");
             let objectToStore = {
                 amount: bonusAmount
             };
@@ -57,7 +61,7 @@ module.exports = (reqIn, callback) => {
             });
         });
     } else if (intentName == "AddBonusAmount") {
-        fs.readFile("./samples/response.json", "utf8", (err, val) => {
+        fs.readFile("./function/samples/response.json", "utf8", (err, val) => {
             let res = JSON.parse(val);
 
             let payee = req.session.attributes["payee"].value;
@@ -66,7 +70,7 @@ module.exports = (reqIn, callback) => {
             res.response.outputSpeech.text = "Let me process that for you now, your payroll will cost an additional " + amount + " dollars";
 
             let bonusAmount = parseInt(amount);
-            let objectStorage = new MinioClient("http://minio-db:8080");
+            let objectStorage = new MinioClient("http://minio-shim:8080");
             let objectToStore = {
                 amount: bonusAmount
             };
@@ -78,7 +82,7 @@ module.exports = (reqIn, callback) => {
         });
     } else if (intentName == "AddBonusName") {
 
-        fs.readFile("./samples/reprompt_response.json", "utf8", (err, val) => {
+        fs.readFile("./function/samples/reprompt_response.json", "utf8", (err, val) => {
             let res = JSON.parse(val);
 
             let payee = req.request.intent.slots["name"].value;

@@ -3,11 +3,9 @@
 const MinioClient = require('minio-db-client');
 
 let handle = (reqIn, callback) => {
-    let req = JSON.parse(reqIn);
-    
     var err = null;
 
-    let objectStorage = new MinioClient("http://minio-db:8080");
+    let objectStorage = new MinioClient("http://minio-shim:8080");
     objectStorage.get("bonus.json", (err, data) => {
         let bonusAmount = 0;
 

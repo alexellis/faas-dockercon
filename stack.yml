@@ -1,7 +1,6 @@
 provider:
   name: faas
-  gateway: http://faas.ae24.space:8080
-  # gateway: http://localhost:8081
+  gateway: http://localhost:8081
 
 functions:
   get-avatar:
